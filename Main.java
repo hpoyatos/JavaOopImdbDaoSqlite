@@ -12,8 +12,8 @@ class Main {
     }
 
     // Como fica para inserir filme agora..
-    Filme novoFilme = new Filme(0, "A Fuga das Galinhas", (short) 2000);
-    filmeDAO.add(novoFilme);
+    // Filme novoFilme = new Filme(0, "A Fuga das Galinhas", (short) 2000);
+    // filmeDAO.add(novoFilme);
 
     // Quero consultar o banco trazendo todos os filmes..
     filmeLista = filmeDAO.getAll();
@@ -21,7 +21,17 @@ class Main {
       System.out.println(filme);
     }
 
-    // Teste .....
+    // Podemos consultar pontualmente qualquer filme..
+    // Trazer Braddock..
+    System.out.println("Trazer o filme Braddock...............");
+
+    Filme braddock = filmeDAO.getById(11);
+    System.out.println(braddock);
+
+    System.out.println("Trazer o filme 'Fuga' que está repetido para alteração...............");
+
+    Filme repetido = filmeDAO.getById(14);
+    System.out.println(repetido);
 
   }
 }

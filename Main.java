@@ -46,7 +46,14 @@ class Main {
       System.out.println(filme);
     }
 
+    System.out.println("Vamos apagar o delírio que foi Fuga 2....");
+    filmeDAO.delete(repetido);
     
-    
+    System.out.println("Vamos ver se apagou?");
+
+    filmeLista = filmeDAO.getAll();
+    for (Filme filme : filmeLista) {
+      System.out.println(filme);
+    }    
   }
 }

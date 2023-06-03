@@ -101,4 +101,16 @@ class FilmeDAO {
     }
   }
 
+  // delete() apaga o filme passado como objeto.....
+  public void delete(Filme filme) {
+    try {
+      // Comando de DELETE no banco
+      String sql = "DELETE FROM filme WHERE id=?";
+      PreparedStatement delete = this.conexao.prepareStatement(sql);
+      delete.setInt(1, filme.getId());
+      delete.execute();
+    } catch (Exception e) {
+      System.out.println("Erro na remoção: " + e.getMessage());
+    }
+  }
 }

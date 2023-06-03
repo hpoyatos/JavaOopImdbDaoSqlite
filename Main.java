@@ -55,5 +55,7 @@ class Main {
     for (Filme filme : filmeLista) {
       System.out.println(filme);
     }    
+
+    //DAO e crud finalizados..
   }
 }

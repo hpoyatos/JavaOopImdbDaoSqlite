@@ -86,4 +86,19 @@ class FilmeDAO {
     return filme;
   }
 
+  // update() atualizar o filme passado como parâmetro...
+  public void update(Filme filme) {
+    try {
+      // Comando de UPDATE no banco
+      String sql = "UPDATE filme SET titulo=?, ano=? WHERE id=?";
+      PreparedStatement update = this.conexao.prepareStatement(sql);
+      update.setString(1, filme.getTitulo());
+      update.setShort(2, filme.getAno());
+      update.setInt(3, filme.getId());
+      update.execute();
+    } catch (Exception e) {
+      System.out.println("Erro na alteração: " + e.getMessage());
+    }
+  }
+
 }

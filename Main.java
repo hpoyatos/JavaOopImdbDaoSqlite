@@ -33,5 +33,20 @@ class Main {
     Filme repetido = filmeDAO.getById(14);
     System.out.println(repetido);
 
+    System.out.println("Trocando o filme 14 para Fuga2....");
+    
+    repetido.setTitulo("A Fuga das Galinhas 2: A Missão");
+    repetido.setAno((short) 2024);
+    filmeDAO.update(repetido);
+
+    System.out.println("Vamos ver se alterou?");
+
+    filmeLista = filmeDAO.getAll();
+    for (Filme filme : filmeLista) {
+      System.out.println(filme);
+    }
+
+    
+    
   }
 }
